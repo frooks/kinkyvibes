@@ -1,0 +1,129 @@
+/* Estilos para el botón de hamburguesa */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  /* Agrega transiciones para opacity y visibility */
+  padding: 0;
+  line-height: 0;
+  opacity: 1;
+  /* Visible por defecto */
+  visibility: visible;
+  /* Visible por defecto */
+}
+
+.hamburger span {
+  width: 30px;
+  /* Ancho de las líneas */
+  height: 3px;
+  /* Altura de las líneas */
+  background: currentColor;
+  margin: 6px 0;
+  /* Espacio entre las líneas - ajusta según sea necesario */
+  transition: transform 0.3s, opacity 0.3s;
+  border-radius: 3px;
+}
+
+/* Transformaciones para la 'X' */
+.hamburger.open .line1 {
+  transform: translateY(9px) rotate(45deg);
+  /* Ajusta el valor de translateY según el espaciado */
+}
+
+.hamburger.open .line2 {
+  opacity: 0;
+}
+
+.hamburger.open .line3 {
+  transform: translateY(-9px) rotate(-45deg);
+  /* Ajusta el valor de translateY según el espaciado */
+}
+
+/* Estilo para ocultar el botón en tamaños de pantalla específicos usando clases de Tailwind */
+@media (min-width: 568px) {
+
+  /* Ejemplo para pantallas 'md' y más grandes */
+  .hamburger {
+    opacity: 0;
+    /* Hace el botón transparente */
+    visibility: hidden;
+    /* Hace el botón no interactuable */
+  }
+
+  .ocean {
+    height: 80px !important; 
+    /* change the height of the waves here */
+  }
+
+  .wave {
+    height: 100% !important;
+  }
+
+  .wave:nth-of-type(1) {
+    animation: wave 160s -3s linear infinite !important;
+  }
+
+  .wave:nth-of-type(2) {
+    animation: wave 162s -1s linear infinite !important;
+  }
+
+  .wave:nth-of-type(3) {
+    animation: wave 73s -7s linear infinite !important;
+  }
+} 
+ 
+.lato {
+  font-family: 'Lato', serif; 
+  font-weight: 400;
+}
+
+
+.text-shadow-pink {
+  top: 35.5vh;
+  text-shadow: 1px 2px 2px #ff69b4;
+  /* Cambia el color y las dimensiones según tus preferencias */
+}
+
+.ocean {
+  z-index: 0;
+  height: 100%; /* Altura de las ondas */
+  width: 100%;
+  position: absolute;
+  overflow: hidden; /* Esto evitará el desbordamiento horizontal */
+}
+
+.wave {
+  background: url("data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4OC43IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0wLDQ0LjM1IFExMDAsMCAyMDAsNDQuMzUgVDQwMCw0NC4zNSBUNjAwLDQ0LjM1IFQ4MDAsNDQuMzUiIHN0cm9rZT0iI0M4QTJDOCIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIi8+Cjwvc3ZnPgo=");
+  position: absolute;
+  width: 1999%; /* Ancho grande para las ondas */
+  min-width: 100000px;
+  min-height: 100px;
+  height: 9.8vh;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.06;
+
+}
+
+
+.wave:nth-of-type(1) {
+  animation: wave 200s -3s linear infinite;
+}
+
+.wave:nth-of-type(2) {
+  animation: wave 220s -9s linear infinite;
+}
+
+.wave:nth-of-type(3) {
+  animation: wave 230s -7s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+
+}

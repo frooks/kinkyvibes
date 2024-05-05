@@ -1,0 +1,30 @@
+.text-shadow-pink {
+    top: 35.5vh;
+    text-shadow: 1px 2px 4px #ff69b4;
+    /* Cambia el color y las dimensiones según tus preferencias */
+}
+
+.glassy {
+    animation-iteration-count: 2 !important;
+    background: rgba(255, 105, 180, 0.48) !important;
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+    border: 1px solid rgba(255, 105, 180, 0.225);
+}
+
+section {
+    min-height: 85vh;
+}
+
+.dm-serif {
+    font-family: 'DM Serif Display', serif;
+}
+
+.lato {
+    font-family: 'Lato', serif;
+}
+
+.purple {
+    background-color: #4a044e;
+}
+ 
