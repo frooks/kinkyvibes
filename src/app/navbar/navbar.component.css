@@ -51,12 +51,22 @@
   }
 
   .ocean {
-    height: 80px !important; 
+    height: 80px !important;
     /* change the height of the waves here */
   }
 
   .wave {
     height: 100% !important;
+    display: hidden;
+  }
+
+  .text-shadow {
+    text-shadow: 0 0 2px #fff, 0 0 5px #f0f, 0 0 15px #f0f, 0 0 30px #f0f;
+  }
+
+  .tsh:hover {
+    text-shadow: 0 0 2px #fff, 0 0 5px #f0f, 0 0 15px #f0f, 0 0 30px #f0f;
+
   }
 
   .wave:nth-of-type(1) {
@@ -70,10 +80,10 @@
   .wave:nth-of-type(3) {
     animation: wave 73s -7s linear infinite !important;
   }
-} 
- 
+}
+
 .lato {
-  font-family: 'Lato', serif; 
+  font-family: 'Lato', serif;
   font-weight: 400;
 }
 
@@ -86,16 +96,19 @@
 
 .ocean {
   z-index: 0;
-  height: 100%; /* Altura de las ondas */
+  height: 100%;
+  /* Altura de las ondas */
   width: 100%;
   position: absolute;
-  overflow: hidden; /* Esto evitará el desbordamiento horizontal */
+  overflow: hidden;
+  /* Esto evitará el desbordamiento horizontal */
 }
 
 .wave {
   background: url("data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4OC43IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0wLDQ0LjM1IFExMDAsMCAyMDAsNDQuMzUgVDQwMCw0NC4zNSBUNjAwLDQ0LjM1IFQ4MDAsNDQuMzUiIHN0cm9rZT0iI0M4QTJDOCIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIi8+Cjwvc3ZnPgo=");
   position: absolute;
-  width: 1999%; /* Ancho grande para las ondas */
+  width: 1999%;
+  /* Ancho grande para las ondas */
   min-width: 100000px;
   min-height: 100px;
   height: 9.8vh;

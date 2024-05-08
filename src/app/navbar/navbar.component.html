@@ -1,6 +1,7 @@
-<nav class="bg-fuchsia-950  shadow-[0_0_2px_#4a044e,0_0_5px_#4a044e,0_0_15px_#4a044e,0_0_30px_#4a044e]">
+<nav class="bg-fuchsia-950 shadow-[0_0_2px_#4a044e,0_0_5px_#4a044e,0_0_15px_#4a044e,0_0_30px_#4a044e] sticky" 
+     style=" ">
     <div class="ocean">
-        <div class="wave"></div> 
+        <div class="sm:hidden wave"></div> 
     </div>  
     <div class="z-10 container mx-auto px-2 py-3 flex flex-col sm:flex-row justify-between items-center">
         <div class="flex justify-between items-center w-full">
@@ -20,19 +21,18 @@
                 <span
                     class="line3 block h-1 w-6 bg-current shadow-[0_0_2px_#fff,0_0_5px_#f0f,0_0_15px_#f0f,0_0_30px_#f0f] transform transition duration-300 ease-in-out"></span>
             </button>
-
         </div>
 
         <!-- Menú de Navegación (visible en pantallas medianas y grandes) -->
         <div [class.hidden]="isNavbarHidden"
             class=" relative gap-x-7 md:flex flex-col md:flex-row w-full ml-22 place-items-stretch text-2xl text-white">
-            <a class="lato block hover:text-black subpixel-antialiased text-white px-3 py-2 text-center" href="#">Parties</a>
-            <a class="lato block hover:text-black subpixel-antialiased text-white px-3 py-2 text-center" href="#">Gallery</a>
-            <a class="lato block hover:text-black subpixel-antialiased text-white px-3 py-2 text-center" href="#">Services</a>
-            <a class="lato block hover:text-black subpixel-antialiased text-white px-3 py-2 text-center" routerLink = "calendar">Calendar</a>
+            <a routerLinkActive="text-shadow" class="tsh lato block subpixel-antialiased text-white px-3 py-2 text-center" routerLink="parties">Parties</a>
+            <a routerLinkActive="text-shadow" class="tsh lato block subpixel-antialiased text-white px-3 py-2 text-center" routerLink="gallery">Gallery</a>
+            <a routerLinkActive="text-shadow" class="tsh lato block subpixel-antialiased text-white px-3 py-2 text-center" routerLink="service">Services</a>
+            <a routerLinkActive="text-shadow" class="tsh lato block subpixel-antialiased text-white px-3 py-2 text-center" routerLink = "calendar">Calendar</a>
             <div class="flex justify-center sm:justify-center md:mt-0.5">
                 <a class="lato text-white align-text-bottom  font-bold py-1 px-3 rounded 
-                          shadow-[0_0_2px_#F2ACDA,inset_0_0_2px_#F2ACDA,0_0_5px_#F2ACDA,0_0_10px_#F2ACDA,0_0_10px_#F2ACDA]" style="background-color: #F2ACDA; ">
+                          shadow-[0_0_2px_#F2ACDA,inset_0_0_2px_#F2ACDA,0_0_5px_#F2ACDA,0_0_10px_#F2ACDA,0_0_10px_#F2ACDA]" style="background-color: #ff8fd8de; ">
                 Login</a> 
             </div>
         </div>
@@ -40,3 +40,4 @@
 
 </nav>
 
+ 
