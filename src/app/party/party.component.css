@@ -3,4 +3,26 @@
     text-shadow: 1px 2px 4px #ff69b4;
     /* Cambia el color y las dimensiones según tus preferencias */
 }
- 
+.rainbow-border {
+    border: 5px solid transparent;
+    border-radius: 10px;
+    animation: rainbow-border-animation 4.20s linear infinite;
+}
+
+@keyframes rainbow-border-animation {
+     
+    0% {
+        border-color: #cca879;
+    }
+
+    33% {
+        border-color: #f0f;
+    }
+    
+    66.333% {
+        border-color: #8a2be2;
+    }
+    100% {
+        border-color: #cca879; /* Vuelve al color inicial */
+    }
+}

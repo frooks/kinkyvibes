@@ -1,64 +1,47 @@
-<div class="w-full mt-8 relative" style="background: rgba(113, 53, 83, 0.44) !important; padding: 9% 0;">
-    <p class="text-4xl text-center text-white text-shadow-pink mt-2 xl:mt-24" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+<div style="background: rgba(113, 53, 83, 0.44) !important;"
+     class="w-full  min-h-full  md:h-full mt-8 relative  pt-8 md:pt-28 pb-72 md:pb-48">
+    <p class="text-4xl text-center text-white text-shadow-pink mt-2  xl:mt-14"
+        style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
         NUESTRAS FIESTAS
     </p>
-    <div class="mt-5 flex justify-center">
+    <div class="mt-12 md:mt-0 flex justify-center">
         <div class="relative">
-            <div class="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-9 relative">
-                <div class="relative">
-                    
-                    <div class="cursor-pointer px-4 mt-9 h-72 w-72 md:h-80 md:w-80 bg-gray-950 relative">
-                        <!-- Flecha izquierda -->
-                        <div style="top: calc(55% - 2.5vmax);" class="cursor-pointer fixed -left-1 md:left-36 flex items-center justify-center w-10 text-white hover:text-gray-900">
-                            <svg class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path cstroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class=" w-72 md:h-80 md:w-80 block md:hidden">
-                    <p class="text-shadow-pink   font-semibold text-center text-gray-200 mt-2">
-                        Ven a nuestra fiesta mas cañera y conoce esta faceta del BDSM de una manera mas cercana y dinamica con juegos y desafios fisicos
-                    </p>
-                </div>
-                
-                <div class="cursor-pointer px-4 mt-9 h-72 w-72 md:h-80 md:w-80 bg-gray-950 relative">
-                        
-                </div>
-                <div class=" w-72 md:h-80 md:w-80 block md:hidden">
-                    <p class="text-shadow-pink   font-semibold text-center text-gray-200 mt-2">
-                        Ven a nuestra fiesta mas cañera y conoce esta faceta del BDSM de una manera mas cercana y dinamica con juegos y desafios fisicos
-                    </p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-60 md:gap-y-3 md:gap-x-6">
+                <div class="rainbow-border cursor-pointer mt-7 h-64 w-64 md:h-80 md:w-80 "
+                    *ngFor="let party of partyList.slice(0, 3)">
 
-                 <div class="cursor-pointer px-4 mt-9 h-72 w-72 md:h-80 md:w-80 bg-gray-950 relative">
-                    <!-- Flecha derecha -->
-                    <div style="top: calc(55% - 2.5vmax);" class="cursor-pointer fixed -right-1 md:right-36 flex items-center justify-center w-10 text-white hover:text-gray-900">
+                    <img loading="lazy" [src]="party.image" alt="Party Image" class=" w-full h-full object-cover">
+                    <div class="block md:hidden  ">
+                        <p class="text-shadow-pink font-semibold text-center py-4 text-amber-200 text-3xl">
+                            {{ party.name }}
+                        </p>
+                        <p class="text-shadow-pink font-semibold text-justify text-gray-200 text-lg whitespace-pre-line">
+                            {{ party.description }}
+                        </p>
+                    </div>
+                    <!-- Flecha izquierda -->
+                    <div (click)="shiftLeft()" style="top: calc(50% - 2.5vmax); left: 4vw;"
+                        class="cursor-pointer fixed flex w-10 text-white hover:text-gray-900">
                         <svg class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </div>
+                    <!-- Flecha derecha -->
+                    <div (click)="shiftRight()" style="top: calc(50% - 2.5vmax); right: 4vw;"
+                        class="cursor-pointer fixed flex w-10 text-white hover:text-gray-900">
+                        <svg class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
                         </svg>
                     </div>
                 </div>
-                <div class=" w-72 md:h-80 md:w-80 block md:hidden">
-                    <p class="text-shadow-pink   font-semibold text-center text-gray-200 mt-2">
-                        Ven a nuestra fiesta mas cañera y conoce esta faceta del BDSM de una manera mas cercana y dinamica con juegos y desafios fisicos
+                <!-- Desktop -->
+                <div *ngFor="let party of partyList.slice(0, 3)"
+                    class="w-80 text-shadow-pink text-amber-200 hidden md:block">
+                    <p class=" text-3xl text-center py-1 pb-2 font-semibold ">
+                        {{ party.name }}
                     </p>
-                </div>
-                 <!-- Desktop -->
-                <div class="md:block hidden h-72 w-72 md:h-32 md:w-80">
-                    <p class="text-shadow-pink  font-semibold text-center text-gray-200 mt-2">
-                        Ven a nuestra fiesta mas cañera y conoce esta faceta del BDSM de una manera mas cercana y dinamica con juegos y desafios fisicos
-                    </p>
-                </div>
-                <div class="md:block hidden h-72 w-72 md:h-32 md:w-80">
-                    <p class="text-shadow-pink font-semibold text-center text-gray-200 mt-2">
-                        Ven a nuestra fiesta mas cañera y conoce esta faceta del BDSM de una manera mas cercana y dinamica con juegos y desafios fisicos
-                    </p>
-                </div>
-                <div class="md:block hidden h-72 w-72 md:h-32 md:w-80">
-                    <p class="text-shadow-pink font-semibold text-center text-gray-200 mt-2">
-                        Ven a nuestra fiesta mas cañera y conoce esta faceta del BDSM de una manera mas cercana y dinamica con juegos y desafios fisicos
+                    <p class="text-xl text-justify font-semibold text-gray-200 px-3">
+                        {{ party.description }}
                     </p>
                 </div>
             </div>

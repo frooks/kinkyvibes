@@ -1,11 +1,11 @@
-# Usar la imagen base de Nginx
+# Use Nginx base image
 FROM nginx:alpine
 
-# Copiar el contenido de la carpeta dist en el directorio de Nginx
-COPY ./dist/kinkyvibes/browser /usr/share/nginx/html
+# Copy built Angular app to Nginx directory
+COPY dist/kinkyvibes/browser /usr/share/nginx/html/
 
-# Exponer el puerto 4200
-EXPOSE 4200
+# Expose port 80
+EXPOSE 80
 
-# Iniciar Nginx
+# Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
