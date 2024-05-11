@@ -3,3 +3,7 @@
     text-shadow: 1px 2px 4px #ff69b4;
     /* Cambia el color y las dimensiones según tus preferencias */
 }
+
+.text-shadow-glow {
+   text-shadow: 0 0 2px #fff, 0 0 5px #f0f, 0 0 15px #f0f, 0 0 30px #f0f;
+} 

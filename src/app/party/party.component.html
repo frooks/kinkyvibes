@@ -1,14 +1,15 @@
 <div style="background: rgba(113, 53, 83, 0.44) !important;"
-     class="w-full  min-h-full  md:h-full mt-8 relative  pt-8 md:pt-28 pb-72 md:pb-48">
+     class="w-full antialiased min-h-full  md:h-full mt-8 relative  pt-8 md:pt-28 pb-72 md:pb-48">
     <p class="text-4xl text-center text-white text-shadow-pink mt-2  xl:mt-14"
         style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
         NUESTRAS FIESTAS
     </p>
-    <div class="mt-12 md:mt-0 flex justify-center">
+    <div class="mt-11 md:mt-0 flex justify-center">
         <div class="relative">
-            <div class="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-60 md:gap-y-3 md:gap-x-6">
-                <div class="rainbow-border cursor-pointer mt-7 h-64 w-64 md:h-80 md:w-80 "
-                    *ngFor="let party of partyList.slice(0, 3)">
+            <div class="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-56 md:gap-y-3 md:gap-x-6">
+                <div class="rainbow-border cursor-pointer h-64 w-64 md:h-80 md:w-80 "
+                    *ngFor="let party of partyList.slice(0, 3)"
+                    style="margin-top: 4vh;">
 
                     <img loading="lazy" [src]="party.image" alt="Party Image" class=" w-full h-full object-cover">
                     <div class="block md:hidden  ">
