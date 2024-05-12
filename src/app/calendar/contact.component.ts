@@ -18,47 +18,47 @@ export class ContactComponent implements OnInit {
 
    ngOnInit() {
       this.calendarList.push(
-         new CalendarCard( 
-            "Shibari en Zoe",
-            "Disfruta del placer de aprender en el espacio naturista mejor ubicado de barcelona, de la mano de Mistress Zoe aprenderas cualquier atadura básica del arte japones del Shibari",
-            "../../assets/primal.png",
-            0,
-            new Set(["aasdasd", "asdasdsab", "casdasd"])
-         ),
          new CalendarCard(
             "Shibari en Zoe",
             "Disfruta del placer de aprender en el espacio naturista mejor ubicado de barcelona, de la mano de Mistress Zoe aprenderas cualquier atadura básica del arte japones del Shibari",
             "../../assets/primal.png",
             0,
-            new Set(["c", "b", "d"])
+            ["aasdasd", "asdasdsab", "casdasd"].sort()
          ),
          new CalendarCard(
             "Shibari en Zoe",
             "Disfruta del placer de aprender en el espacio naturista mejor ubicado de barcelona, de la mano de Mistress Zoe aprenderas cualquier atadura básica del arte japones del Shibari",
             "../../assets/primal.png",
-            0,
-            new Set(["a", "z", "h"])
+            1,
+            ["cccsdasd", "bbbsdasd", "dddsdasd"].sort()
          ),
          new CalendarCard(
             "Shibari en Zoe",
             "Disfruta del placer de aprender en el espacio naturista mejor ubicado de barcelona, de la mano de Mistress Zoe aprenderas cualquier atadura básica del arte japones del Shibari",
             "../../assets/primal.png",
-            0,
-            new Set(["e", "q", "c"])
+            2,
+            ["aasdasd", "zzzsdasd", "hhhsdasd"].sort()
          ),
          new CalendarCard(
             "Shibari en Zoe",
             "Disfruta del placer de aprender en el espacio naturista mejor ubicado de barcelona, de la mano de Mistress Zoe aprenderas cualquier atadura básica del arte japones del Shibari",
             "../../assets/primal.png",
-            0,
-            new Set(["z", "q"])
+            3,
+            ["eeesdasd", "qqqsdasd", "cccsdasd"].sort()
          ),
          new CalendarCard(
             "Shibari en Zoe",
             "Disfruta del placer de aprender en el espacio naturista mejor ubicado de barcelona, de la mano de Mistress Zoe aprenderas cualquier atadura básica del arte japones del Shibari",
             "../../assets/primal.png",
-            0,
-            new Set(["b", "c", "a"])
+            4,
+            ["zzzsdasd", "qqqsdasd"].sort()
+         ),
+         new CalendarCard(
+            "Shibari en Zoe",
+            "Disfruta del placer de aprender en el espacio naturista mejor ubicado de barcelona, de la mano de Mistress Zoe aprenderas cualquier atadura básica del arte japones del Shibari",
+            "../../assets/primal.png",
+            5,
+            ["bbbsdasd", "cccsdasd", "aasdasd"].sort()
          )
       );
 
@@ -69,12 +69,8 @@ export class ContactComponent implements OnInit {
             if (!this.categoryMap.has(category)) {
                this.categoryMap.set(category, true);
             }
-         }
-
-         );
+         });
       });
-
-      console.log(this.categoryMap)
 
       this.categoryMap = new Map<string, boolean>(
          Array.from(this.categoryMap.entries()).sort((a, b) => a[0].localeCompare(b[0]))
@@ -86,27 +82,25 @@ export class ContactComponent implements OnInit {
 
    clickCategory(name: string) {
       console.log(this.categoryMap);
-    
+
       if (this.categoryMap.has(name)) {
-        this.categoryMap.delete(name);
-        this.fullCategoryMap.set(name, false);
+         this.categoryMap.delete(name);
+         this.fullCategoryMap.set(name, false);
       } else {
-        this.categoryMap.set(name, true);
-        this.fullCategoryMap.set(name, true);
+         this.categoryMap.set(name, true);
+         this.fullCategoryMap.set(name, true);
       }
-    
-      // Update calendarList based on categoryMap
-      this.calendarList = this.fullCalendarList.filter(calendar => {
-        for (const category of calendar.categories) {
-          if (this.categoryMap.get(category)) {
-            return true;
-          }
-        }
-        return false;
-      });
-    
+
+      this.calendarList =
+         this.fullCalendarList.filter(calendar =>
+            calendar.categories.some(category => this.categoryMap.has(category))
+         );
+
       console.log(this.categoryMap);
-    }
-    
+   }
+
+    isCategoryClicked(name: string) : boolean {
+      return this.categoryMap.has(name);
+   }
 
 }

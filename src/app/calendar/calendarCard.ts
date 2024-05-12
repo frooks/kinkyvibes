@@ -5,14 +5,14 @@ export default class CalendarCard {
    description: string;
    image: string; // URL
    order: number;
-   categories: Set<string>;
+   categories: string[];
 
    constructor(//date: Date, 
                name: string, 
                description: string,
                image: string,
                order: number,
-               categories: Set<string>) {
+               categories:string[]) {
 
       //this.date = date;
       this.name = name;
